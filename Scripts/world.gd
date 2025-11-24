@@ -5,8 +5,12 @@ extends Node3D
 @onready var navigation_region_3d: NavigationRegion3D = $Map/NavigationRegion3D
 @onready var spawn_manager: Node3D = $Map/NavigationRegion3D/Spawn_Manager
 @onready var zombie_respawm_timer: Timer = $Zombie_Respawm_Timer
+@onready var background_music: AudioStreamPlayer = $BackgroundMusic
+
 
 @export var origin_zombie := load("res://Scenes/zombie.tscn")
+
+
 var zombie_instance
 
 func _ready() -> void:
@@ -14,7 +18,11 @@ func _ready() -> void:
 	player_hit.visible = false
 	get_random_respawn()
 	
-	
+func _process(delta: float) -> void:
+	if !background_music.playing:
+		background_music.play()
+		
+
 func _on_player_player_hit() -> void:
 	player_hit.visible = true
 	await get_tree().create_timer(0.2).timeout
@@ -26,7 +34,7 @@ func get_random_respawn():
 	var spawn_position = spawn_manager.get_child(random_id).global_position
 	zombie_instance = origin_zombie.instantiate()
 	zombie_instance.global_position = spawn_position
-	var zombie_scale = randf_range(1 , 10)
+	var zombie_scale = randf_range(1 , 10) * 1.2
 	zombie_instance.speed = zombie_scale
 	zombie_instance.scale = Vector3.ONE * zombie_scale
 	navigation_region_3d.add_child(zombie_instance)

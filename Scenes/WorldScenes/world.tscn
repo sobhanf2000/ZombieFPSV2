@@ -2504,7 +2504,7 @@ offset_bottom = 656.0
 color = Color(0.95686275, 0, 0, 0.43137255)
 
 [node name="Zombie_Respawm_Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 autostart = true
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
