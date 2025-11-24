@@ -10,7 +10,7 @@ extends CharacterBody3D
 @onready var rifle_barrel: Node3D = $Head/Camera/Assault_Rifle/RayCast3D
 @onready var shoot_sound: AudioStreamPlayer = $ShootSound
 
-
+var health = 10
 
 var bullet_origin = load("res://Scenes/bullet.tscn")
 var bullet_instance
@@ -51,8 +51,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	state_machine.process_input(event)
 
 
-func hit(dir):
+func hit(dir , dam):
 	emit_signal("player_hit")
+	damage(dam)
 	velocity += dir * hit_stagger
 	velocity = lerp(velocity, Vector3.ZERO,10) 
-	
+
+
+func damage(dam):
+	health -= dam 
+	if health <= 0:
+		get_tree().reload_current_scene()

@@ -49,8 +49,9 @@ func hit_finished():
 		#var dir = Vector3(global_position.distance_to(player.global_position),0,global_position.distance_to(player.global_position)) 
 		#var dir = (player.global_position - global_position).normalized()
 		var dir = transform.basis.z.normalized()
-		player.hit(dir)
-	
+		var damage = 2
+		player.hit(dir,damage)
+
 
 
 func _on_area_3d_body_part_hit(dam: Variant) -> void:
