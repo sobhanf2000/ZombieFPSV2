@@ -8,6 +8,9 @@ extends CharacterBody3D
 @onready var move_component: Node = $Move_Component
 @onready var rifle_anim: AnimationPlayer = $Head/Camera/Assault_Rifle/AnimationPlayer
 @onready var rifle_barrel: Node3D = $Head/Camera/Assault_Rifle/RayCast3D
+@onready var shoot_sound: AudioStreamPlayer = $ShootSound
+
+
 
 var bullet_origin = load("res://Scenes/bullet.tscn")
 var bullet_instance
@@ -28,6 +31,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("shoot"):
 		if !rifle_anim.is_playing():
 			rifle_anim.play("shoot")
+			shoot_sound.play()
 			bullet_instance = bullet_origin.instantiate()
 			bullet_instance.position = rifle_barrel.global_position
 			bullet_instance.transform.basis = rifle_barrel.global_transform.basis

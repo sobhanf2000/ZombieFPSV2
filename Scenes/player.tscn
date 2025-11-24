@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b2dk25e60vth7"]
+[gd_scene load_steps=11 format=3 uid="uid://b2dk25e60vth7"]
 
 [ext_resource type="Script" uid="uid://cx6rgqoa7tch5" path="res://Scripts/StaticMachine/Player/player.gd" id="1_fkybt"]
 [ext_resource type="PackedScene" uid="uid://dwtoj0x3mrbie" path="res://Scenes/assault_rifle.tscn" id="2_3smsa"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cb0ggjbdkx16r" path="res://Scripts/StaticMachine/Player/idle_state.gd" id="3_x3wgy"]
 [ext_resource type="Script" uid="uid://bd0w18ax1kvxd" path="res://Scripts/StaticMachine/Player/move_state.gd" id="4_3smsa"]
 [ext_resource type="Script" uid="uid://q8sxi4hexnvc" path="res://Scripts/StaticMachine/Player/jump_state.gd" id="5_8erm5"]
+[ext_resource type="AudioStream" uid="uid://befkp2bjeiact" path="res://Assets/Sounds/SoundEffects/Modified_lightmachinegun.wav" id="8_8erm5"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cvnsp"]
 
@@ -56,3 +57,7 @@ idle_state = NodePath("../Idle_State")
 move_state = NodePath("../Move_State")
 jump_strengh = 10.0
 move_speed = 15.0
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_8erm5")
+volume_db = -5.0
