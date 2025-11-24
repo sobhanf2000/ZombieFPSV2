@@ -2,11 +2,12 @@ extends CharacterBody3D
 
 var player = null
 var state_machine
+var health = 6
+
 
 const ATTACK_RANGE = 5
 
 @export var speed : float
-
 @export var origin_zombie: CharacterBody3D
 
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
@@ -50,3 +51,9 @@ func hit_finished():
 		var dir = transform.basis.z.normalized()
 		player.hit(dir)
 	
+
+
+func _on_area_3d_body_part_hit(dam: Variant) -> void:
+	health -=dam
+	if health <= 0:
+		queue_free()

@@ -46,6 +46,7 @@ size = Vector3(0.22813416, 0.095199585, 0.9029541)
 [node name="Grave" type="Node3D"]
 
 [node name="grave2" type="StaticBody3D" parent="."]
+collision_layer = 3
 
 [node name="grave" type="MeshInstance3D" parent="grave2"]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)

@@ -50,6 +50,7 @@ radius = 0.16601563
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="pumpkin-carved2" type="StaticBody3D" parent="."]
+collision_layer = 3
 
 [node name="pumpkin-carved" type="MeshInstance3D" parent="pumpkin-carved2"]
 material_override = SubResource("StandardMaterial3D_ttfdy")

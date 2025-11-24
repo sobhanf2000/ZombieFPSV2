@@ -51,6 +51,7 @@ points = PackedVector3Array(0.437451, 0.8239, -0.450004, 0.459965, 0.753898, -0.
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="iron-fence2" type="StaticBody3D" parent="."]
+collision_layer = 3
 
 [node name="iron-fence" type="MeshInstance3D" parent="iron-fence2"]
 material_override = SubResource("StandardMaterial3D_hfyxw")

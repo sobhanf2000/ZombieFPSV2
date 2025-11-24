@@ -49,6 +49,7 @@ data = PackedVector3Array(-0.391, 0.13, -0.409, -0.391, 0.13, -0.491, -0.391, 0.
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="iron-fence-border-gate2" type="StaticBody3D" parent="."]
+collision_layer = 3
 
 [node name="iron-fence-border-gate" type="MeshInstance3D" parent="iron-fence-border-gate2"]
 material_override = SubResource("StandardMaterial3D_ckqww")

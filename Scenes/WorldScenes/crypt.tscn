@@ -166,6 +166,7 @@ _data = {
 
 [node name="crypt2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0285648, 0, -0.0419059)
+collision_layer = 3
 
 [node name="crypt" type="MeshInstance3D" parent="crypt2"]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)

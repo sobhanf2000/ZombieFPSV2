@@ -50,6 +50,7 @@ enabled=PackedStringArray("res://addons/simplegrasstextured/plugin.cfg")
 [global_group]
 
 Player=""
+enemy=""
 
 [input]
 

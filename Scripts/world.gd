@@ -26,7 +26,8 @@ func get_random_respawn():
 	var spawn_position = spawn_manager.get_child(random_id).global_position
 	zombie_instance = origin_zombie.instantiate()
 	zombie_instance.global_position = spawn_position
-	var zombie_scale = randf_range(1 , 3)
+	var zombie_scale = randf_range(1 , 10)
+	zombie_instance.speed = zombie_scale
 	zombie_instance.scale = Vector3.ONE * zombie_scale
 	navigation_region_3d.add_child(zombie_instance)
 
